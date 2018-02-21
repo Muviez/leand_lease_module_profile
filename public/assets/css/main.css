@@ -54,7 +54,7 @@ body {
   display: -ms-flexbox;
   display: flex; }
 
-.layout .content_button button {
+.layout .content_button a {
   font-size: 3rem;
   margin: 0 3rem; }
 

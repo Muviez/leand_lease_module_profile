@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM, { render } from 'react-dom';
 
 class Layout extends Component {
     render() {
@@ -12,24 +11,16 @@ class Layout extends Component {
                                 <div className="header_desc">
                                     <p className="header_desc-logo">ЛОГО</p>
                                     <p>Информация о товаре и магазине</p>
-                                    <a href="">8 (812) 532-46-28</a> <br/>
+                                    <a href="#">8 (812) 532-46-28</a> <br/>
                                     <span>c 9:00 до 19:00 по будням</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div className="content">
-                    <div className="container">
-                        <div className="row justify-content-center align-items-center">
-                            <div className="content_button">
-                                <button type="submit" className="btn btn-primary">Регистрация</button>
-                                <button type="submit" className="btn btn-primary">Войти</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+
                 <div className="footer">
                     <div className="container">
                         <div className="row justify-content-around">
