@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-function FormRegister() {
+function Register() {
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -42,4 +42,4 @@ function FormRegister() {
     );
 };
 
-export default FormRegister;
+export default Register;

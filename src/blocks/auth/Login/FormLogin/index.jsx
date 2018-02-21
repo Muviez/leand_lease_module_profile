@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-function FormLogin() {
+function Login() {
     return (
         <div className="section-auth">
             <div className="container">
@@ -27,4 +27,4 @@ function FormLogin() {
     );
 };
 
-export default FormLogin;
+export default Login;
