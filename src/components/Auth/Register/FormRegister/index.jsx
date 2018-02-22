@@ -10,19 +10,19 @@ function Register() {
                             <div className='form-group section-auth_form-headText'>
                                 <h2>Регистрация</h2>
                             </div>
-                            <div className='form-group section-auth_form-group'>
+                            <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Login</label>
                                 <input type='text' className='form-control' />
                             </div>
-                            <div className='form-group section-auth_form-group'>
+                            <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Email адрес</label>
                                 <input type='email' className='form-control' />
                             </div>							
-                            <div className='form-group section-auth_form-group'>
+                            <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Пароль</label>
                                 <input type='password' className='form-control' />
                             </div>							
-                            <div className='form-group section-auth_form-group'>
+                            <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Подтверждение пароля</label>
                                 <input type='password' className='form-control' />
                             </div>
