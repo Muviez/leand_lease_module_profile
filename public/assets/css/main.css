@@ -23,12 +23,10 @@ body {
   color: #fff; }
 
 .layout .header_desc-logo {
-  font-size: 5rem;
-  margin: 1.5rem 0;
+  font-size: 4.5rem !important;
+  margin: 1.5rem 0 !important;
+  display: block;
   font-weight: bold; }
-
-.layout .header_desc p {
-  margin-top: 20px; }
 
 .layout .header_desc a {
   font-size: 2rem;
@@ -62,7 +60,7 @@ body {
   margin: 0 3rem; }
 
 .layout .section-auth {
-  margin: 10rem 0; }
+  margin: 10rem 0;}
 
 .layout .section-auth_form {
   display: -webkit-box;
@@ -99,13 +97,22 @@ body {
 .layout .section-auth_form-group label {
   font-size: 1.3rem !important; }
 
+.layout .section-auth_form-group .confPass {
+  display: block;
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.1rem;}
+
+.layout .section-auth_form-group .confPass:hover {
+  color: #00B6F1;}
+
 .layout .section-auth_form-check {
   margin: 0 !important;
   width: 70%; }
 
 .layout .section-auth_form-check label {
   line-height: 1.7 !important; }
-
+  
 .layout .section-auth_form button {
   font-size: 2rem;
   margin-top: 30px; }

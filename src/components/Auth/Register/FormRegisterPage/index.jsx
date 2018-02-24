@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Input from './InputReg.jsx'
+
 function Register() {
     return (
         <div className='section-auth'>
@@ -12,19 +14,19 @@ function Register() {
                             </div>
                             <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Login</label>
-                                <input type='text' className='form-control' />
+                                <Input type='text' name='login'/>
                             </div>
                             <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Email адрес</label>
-                                <input type='email' className='form-control' />
-                            </div>							
+                                <Input type='email' name='email'/>
+                            </div>
                             <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Пароль</label>
-                                <input type='password' className='form-control' />
+                                <Input type='password' name='password'/>
                             </div>							
                             <div className='form-group bmd-form-group section-auth_form-group'>
                                 <label className='bmd-label-floating'>Подтверждение пароля</label>
-                                <input type='password' className='form-control' />
+                                <Input type='password' name='confirmPassword'/>
                             </div>
                             <div className='form-check section-auth_form-check'>
                                 <label className='form-check-label'>
