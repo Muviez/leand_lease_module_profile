@@ -6,6 +6,7 @@ import Home from './components/Home/index.jsx';
 import Login from './components/Auth/Login/FormLoginPage/index.jsx';
 import Register from './components/Auth/Register/FormRegisterPage/index.jsx';
 import ValidationForms from './components/ValidationForm.jsx';
+import User from './components/UserProfile/index.jsx';
 
 export default (
     <Route path='/' component={App}>
@@ -13,5 +14,6 @@ export default (
         <Route path='register' component={Register} />
         <Route path='login' component={Login} />
         <Route path='validation' component={ValidationForms} />
+        <Route path='userprofile' component={User} />
     </Route>
 )
