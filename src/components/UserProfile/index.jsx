@@ -3,9 +3,10 @@ import {
     Card, CardHeader, CardBody, Row, Col
 } from 'reactstrap';
 
-import { FormInputs } from './Components/FormInputs.jsx';
-import { CardAuthor } from './Components/CardAuthor.jsx';
-import { CardSocials } from './Components/CardSocials.jsx';
+import FormInputs  from './Components/FormInputs.jsx';
+import CardAuthor  from './Components/CardAuthor.jsx';
+import CardSocials from './Components/CardSocials.jsx';
+import Button from './Components/CustomButton.jsx';
 
 // import userBackground from 'assets/img/bg5.jpg';
 // import userAvatar from 'assets/img/mike.jpg';
@@ -13,10 +14,10 @@ import { CardSocials } from './Components/CardSocials.jsx';
 class User extends Component{
     render(){
         return (
-            <div>
-                <div className="content">
-                    <Row>
-                        <Col md={8} xs={12}>
+            <div className="content">
+                <div className="container">
+                    <div className="row justify-content-start">
+                        <div className="col-12">
                             <Card>
                                 <CardHeader>
                                     <h5 className="title">Edit Profile</h5>
@@ -112,63 +113,56 @@ class User extends Component{
                                                 }
                                             ]}
                                         />
-                                        <FormInputs
-                                            ncols = {["col-md-12"]}
-                                            proprieties = {[
-                                                {
-                                                    label : "About Me",
-                                                    inputProps : {
-                                                        type : "textarea",
-                                                        rows: "4",
-                                                        cols: "80",
-                                                        defaultValue: "Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.",
-                                                        placeholder: "Here can be your description"
-                                                    }
-                                                }
-                                            ]}
-                                        />
+                                        <Button
+                                            // bsStyle="info"
+                                            // pullRight
+                                            fill
+                                            type="submit"
+                                        >
+                                            Update Profile
+                                        </Button>
                                     </form>
                                 </CardBody>
                             </Card>
-                        </Col>
-                        <Col md={4}  xs={12}>
-                            <Card className="card-user">
-                                <div className="image">
-                                    <img alt="..."/>
-                                </div>
-                                <CardBody>
-                                    <CardAuthor
-                                        avatarAlt="..."
-                                        title="Mike Andrew"
-                                        description="michael23"
-                                    />
-                                    <p className="description text-center">
-                                        "Lamborghini Mercy <br/>
-                                        Your chick she so thirsty <br/>
-                                        I'm in that two seat Lambo"
-                                    </p>
-                                </CardBody>
-                                <hr />
-                                <CardSocials
-                                    size="lg"
-                                    socials={[
-                                        {
-                                            icon: "fa fa-facebook-square",
-                                            href: "https://www.facebook.com/"
-                                        },
-                                        {
-                                            icon: "fa fa-twitter",
-                                            href: "https://www.facebook.com/"
-                                        },
-                                        {
-                                            icon: "fa fa-google-plus-square",
-                                            href: "https://plus.google.com/discover"
-                                        },
-                                    ]}
+                        </div>
+                    {/* <Col md={4}  xs={12}>
+                        <Card className="card-user">
+                            <div className="image">
+                                <img alt="..."/>
+                            </div>
+                            <CardBody>
+                                <CardAuthor
+                                    avatarAlt="..."
+                                    title="Mike Andrew"
+                                    description="michael23"
                                 />
-                            </Card>
-                        </Col>
-                    </Row>
+                                <p className="description text-center">
+                                    "Lamborghini Mercy <br/>
+                                    Your chick she so thirsty <br/>
+                                    I'm in that two seat Lambo"
+                                </p>
+                            </CardBody>
+                            <hr />
+                            <CardSocials
+                                size="lg"
+                                socials={[
+                                    {
+                                        icon: "fa fa-facebook-square",
+                                        href: "https://www.facebook.com/"
+                                    },
+                                    {
+                                        icon: "fa fa-twitter",
+                                        href: "https://www.facebook.com/"
+                                    },
+                                    {
+                                        icon: "fa fa-google-plus-square",
+                                        href: "https://plus.google.com/discover"
+                                    },
+                                ]}
+                            />
+                        </Card>
+                    </Col> */}
+                    </div>
                 </div>
             </div>
         );

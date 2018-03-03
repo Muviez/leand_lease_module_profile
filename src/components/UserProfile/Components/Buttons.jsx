@@ -4,13 +4,12 @@ import {
     ButtonGroup, ButtonToolbar, Card, CardHeader, CardBody, CardTitle, Row, Col, Pagination, PaginationItem, PaginationLink
 } from 'reactstrap';
 
-// import { PanelHeader, Button } from 'components';
+import { Button } from './CustomButton.jsx';
 
 class Buttons extends Component{
     render(){
         return (
             <div>
-                <PanelHeader size="sm"/>
                 <div className="content">
                     <Card>
                         <Row>

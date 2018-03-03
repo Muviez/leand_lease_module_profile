@@ -2,7 +2,8 @@ import React from 'react';
 // used for making the prop types of this component
 import PropTypes from 'prop-types';
 
-import { Button } from './Button.jsx';
+// import Buttons from './Buttons.jsx';
+import Button from './CustomButton.jsx';
 
 class CardSocials extends React.Component{
     render(){
