@@ -43,7 +43,7 @@ function Header() {
                         </a>
                     </li> */}
                     <li className="nav-item">
-                        <Link to="/" className="nav-link">
+                        <Link to="/userprofile" className="nav-link">
                             <i className="now-ui-icons ui-1_lock-circle-open"></i>
                             Profile
                         </Link>

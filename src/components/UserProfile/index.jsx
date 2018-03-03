@@ -2,137 +2,49 @@ import React, { Component } from 'react';
 import {
     Card, CardHeader, CardBody, Row, Col
 } from 'reactstrap';
+// import axios from 'axios';
+import { connect } from 'react-redux';
 
-import FormInputs  from './Components/FormInputs.jsx';
 import CardAuthor  from './Components/CardAuthor.jsx';
 import CardSocials from './Components/CardSocials.jsx';
+import EditForm from './Components/EditForm.jsx';
 import Button from './Components/CustomButton.jsx';
+import { ChangeProfile } from '../../actions/user.js';
 
-// import userBackground from 'assets/img/bg5.jpg';
-// import userAvatar from 'assets/img/mike.jpg';
+// import '../../../public/assets/img/bg5.jpg';
+// import '../../../public/assets/img/mike.jpg';
 
-class User extends Component{
-    render(){
-        return (
-            <div className="content">
-                <div className="container">
-                    <div className="row justify-content-start">
-                        <div className="col-12">
-                            <Card>
-                                <CardHeader>
-                                    <h5 className="title">Edit Profile</h5>
-                                </CardHeader>
-                                <CardBody>
-                                    <form>
-                                        <FormInputs
-                                            ncols = {["col-md-5 pr-1" , "col-md-3 px-1" , "col-md-4 pl-1"]}
-                                            proprieties = {[
-                                                {
-                                                    label : "Company (disabled)",
-                                                    inputProps : {
-                                                        type : "text",
-                                                        disabled: true,
-                                                        defaultValue: "Creative Code Inc."
-                                                    }
-                                                },
-                                                {
-                                                    label : "Username",
-                                                    inputProps : {
-                                                        type : "text",
-                                                        defaultValue: "michael23"
-                                                    }
-                                                },
-                                                {
-                                                    label : "Email address",
-                                                    inputProps : {
-                                                        type : "email",
-                                                        placeholder: "Email"
-                                                    }
-                                                }
-                                            ]}
-                                        />
-                                        <FormInputs
-                                            ncols = {["col-md-6 pr-1" , "col-md-6 pl-1"]}
-                                            proprieties = {[
-                                                {
-                                                    label : "First Name",
-                                                    inputProps : {
-                                                        type : "text",
-                                                        placeholder: "First Name",
-                                                        defaultValue: "Mike"
-                                                    }
-                                                },
-                                                {
-                                                    label : "Last Name",
-                                                    inputProps : {
-                                                        type : "text",
-                                                        placeholder: "Last Name",
-                                                        defaultValue: "Andrew"
-                                                    }
-                                                }
-                                            ]}
-                                        />
-                                        <FormInputs
-                                            ncols = {["col-md-12"]}
-                                            proprieties = {[
-                                                {
-                                                    label : "Address",
-                                                    inputProps : {
-                                                        type : "text",
-                                                        placeholder: "Home Address",
-                                                        defaultValue: "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                                                    }
-                                                }
-                                            ]}
-                                        />
-                                        <FormInputs
-                                            ncols = {["col-md-4 pr-1" , "col-md-4 px-1" , "col-md-4 pl-1"]}
-                                            proprieties = {[
-                                                {
-                                                    label : "City",
-                                                    inputProps : {
-                                                        type : "text",
-                                                        defaultValue: "Bucharest",
-                                                        placeholder: "City"
-                                                    }
-                                                },
-                                                {
-                                                    label : "Country",
-                                                    inputProps : {
-                                                        type : "text",
-                                                        defaultValue: "Romania",
-                                                        placeholder: "Country"
-                                                    }
-                                                },
-                                                {
-                                                    label : "Postal Code",
-                                                    inputProps : {
-                                                        type : "number",
-                                                        placeholder: "ZIP Code"
-                                                    }
-                                                }
-                                            ]}
-                                        />
-                                        <Button
-                                            // bsStyle="info"
-                                            // pullRight
-                                            fill
-                                            type="submit"
-                                        >
-                                            Update Profile
-                                        </Button>
-                                    </form>
-                                </CardBody>
-                            </Card>
-                        </div>
-                    {/* <Col md={4}  xs={12}>
+const User = (props) => {
+
+    const ChangeProfFunc = () => {
+        console.log(props.upProf)
+        props.ChngProf();
+    }
+
+    return (
+        <div className="content">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-9">
+                        <Card>
+                            <CardHeader>
+                                {props.upProf && <h5 className="title">Profile</h5>}
+                                {!props.upProf && <h5 className="title">Edit Profile</h5>}
+                            </CardHeader>
+                            <CardBody>
+                                {console.log(props.upProf)}
+                                {props.upProf && <EditForm />}
+                            </CardBody>
+                        </Card>
+                    </div>
+                    <Col md={3}  xs={12}>
                         <Card className="card-user">
                             <div className="image">
-                                <img alt="..."/>
+                                <img src="" alt="..."/>
                             </div>
                             <CardBody>
                                 <CardAuthor
-                                    avatarAlt="..."
+                                    avatar=""
                                     title="Mike Andrew"
                                     description="michael23"
                                 />
@@ -142,31 +54,36 @@ class User extends Component{
                                     I'm in that two seat Lambo"
                                 </p>
                             </CardBody>
-                            <hr />
-                            <CardSocials
-                                size="lg"
-                                socials={[
-                                    {
-                                        icon: "fa fa-facebook-square",
-                                        href: "https://www.facebook.com/"
-                                    },
-                                    {
-                                        icon: "fa fa-twitter",
-                                        href: "https://www.facebook.com/"
-                                    },
-                                    {
-                                        icon: "fa fa-google-plus-square",
-                                        href: "https://plus.google.com/discover"
-                                    },
-                                ]}
-                            />
+                            <Button
+                                // bsStyle="info"
+                                // pullRight
+                                fill
+                                type="button"
+                                onClick={ChangeProfFunc}
+                            >
+                                Update Profile
+                            </Button>
                         </Card>
-                    </Col> */}
-                    </div>
+                    </Col>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
+
 }
 
-export default User;
+function mapStateToProps(state){
+    return {
+        upProf: state.userProfile.changeProfile
+    }
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        ChngProf: () => {
+            dispatch(ChangeProfile());
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
