@@ -7,6 +7,7 @@ import Login from './components/Auth/Login/FormLoginPage/index.jsx';
 import Register from './components/Auth/Register/FormRegisterPage/index.jsx';
 import ValidationForms from './components/ValidationForm.jsx';
 import User from './components/UserProfile/index.jsx';
+import Panels from './components/UserProfile/Components/Panels.jsx';
 
 export default (
     <Route path='/' component={App}>

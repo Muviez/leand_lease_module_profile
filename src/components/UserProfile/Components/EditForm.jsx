@@ -103,7 +103,7 @@ function EditForm(props) {
                 type="button"
                 onClick={SaveProfFunc}
             >
-                Update Profile
+                Save Profile
             </Button>
         </form>
     );

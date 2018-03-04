@@ -9,6 +9,8 @@ import CardAuthor  from './Components/CardAuthor.jsx';
 import CardSocials from './Components/CardSocials.jsx';
 import EditForm from './Components/EditForm.jsx';
 import Button from './Components/CustomButton.jsx';
+import Panels from './Components/Panels.jsx'
+import TabMenu from './Components/TabMenu.jsx'
 import { ChangeProfile } from '../../actions/user.js';
 
 // import '../../../public/assets/img/bg5.jpg';
@@ -28,12 +30,13 @@ const User = (props) => {
                     <div className="col-9">
                         <Card>
                             <CardHeader>
-                                {props.upProf && <h5 className="title">Profile</h5>}
-                                {!props.upProf && <h5 className="title">Edit Profile</h5>}
+                                {props.upProf && <h5 className="title">Edit Profile</h5>}
+                                {!props.upProf && <TabMenu />}
                             </CardHeader>
                             <CardBody>
                                 {console.log(props.upProf)}
                                 {props.upProf && <EditForm />}
+                                {!props.upProf  && <Panels />}
                             </CardBody>
                         </Card>
                     </div>

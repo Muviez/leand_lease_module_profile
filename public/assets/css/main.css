@@ -213,6 +213,10 @@ body {
   border-radius: 1.3rem !important;
 }
 
+.nav-pills .nav-item i {
+  line-height: 20px !important; 
+}
+
 
 
 
