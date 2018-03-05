@@ -1,48 +1,77 @@
 import React from 'react';
 import {
-    Nav, NavItem, NavLink 
+    Nav, NavItem, NavLink
 } from 'reactstrap';
+import { connect } from 'react-redux';
 
-class TabMenu extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            pageSubcategories: "ps1"
-        }
+import {FirtsTab, SecondTab, ThirdTab} from '../../../actions/user.js'
+
+function TabMenu(props) {
+
+    const fstTab = () => { //Переключение на первый таб
+        props.FirtsTab();
+    };
+
+    const secTab = () => { //переключение на второй таб
+        props.SecondTab();
+    };
+
+    const thrTab = () => { //Переключение на третий таб
+        props.ThirdTab();
     }
-    render(){
-        return (
-            <Nav pills className="nav-pills-primary nav-pills-icons justify-content-center">
-                <NavItem>
-                    <NavLink
-                        className={this.state.pageSubcategories === "ps1" ? "active":""}
-                        onClick={() => this.setState({pageSubcategories: "ps1"})}
-                    >
-                        <i className="now-ui-icons objects_umbrella-13"></i>
-                        Home
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink
-                        className={this.state.pageSubcategories === "ps2" ? "active":""}
-                        onClick={() => this.setState({pageSubcategories: "ps2"})}
-                    >
-                        <i className="now-ui-icons shopping_shop"></i>
-                        Messages
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink
-                        className={this.state.pageSubcategories === "ps3" ? "active":""}
-                        onClick={() => this.setState({pageSubcategories: "ps3"})}
-                    >
-                        <i className="now-ui-icons ui-2_settings-90"></i>
-                        Settings
-                    </NavLink>
-                </NavItem>
-            </Nav>
-        );
-    }
+
+
+    return (
+        <Nav pills className="nav-pills-primary nav-pills-icons justify-content-center">
+            <NavItem>
+                <NavLink
+                    className={props.pageSub === "ps1" ? "active":""}
+                    onClick={fstTab}
+                >
+                    <i className="now-ui-icons objects_umbrella-13"></i>
+                    Home
+                </NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink
+                    className={props.pageSub === "ps2" ? "active":""}
+                    onClick={secTab}
+                >
+                    <i className="now-ui-icons shopping_shop"></i>
+                    Messages
+                </NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink
+                    className={props.pageSub === "ps3" ? "active":""}
+                    onClick={thrTab}
+                >
+                    <i className="now-ui-icons ui-2_settings-90"></i>
+                    Settings
+                </NavLink>
+            </NavItem>
+        </Nav>
+    );
 }
 
-export default TabMenu;
+function mapStateToProps(state){
+    return {
+        pageSub: state.userProfile.pageSubcategories
+    }
+};
+
+function mapDispatchToProps(dispatch) {
+    return {
+        FirtsTab: () => {
+            dispatch(FirtsTab());
+        },
+        SecondTab: () => {
+            dispatch(SecondTab());
+        },
+        ThirdTab: () => {
+            dispatch(ThirdTab());
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TabMenu);

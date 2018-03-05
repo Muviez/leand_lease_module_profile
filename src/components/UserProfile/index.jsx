@@ -34,7 +34,7 @@ const User = (props) => {
                                 {!props.upProf && <TabMenu />}
                             </CardHeader>
                             <CardBody>
-                                {console.log(props.upProf)}
+                                {/* {console.log(props.upProf)} */}
                                 {props.upProf && <EditForm />}
                                 {!props.upProf  && <Panels />}
                             </CardBody>
@@ -64,7 +64,7 @@ const User = (props) => {
                                 type="button"
                                 onClick={ChangeProfFunc}
                             >
-                                Update Profile
+                                Change Profile
                             </Button>
                         </Card>
                     </Col>
