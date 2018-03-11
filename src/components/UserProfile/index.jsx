@@ -48,24 +48,16 @@ const User = (props) => {
                             <CardBody>
                                 <CardAuthor
                                     avatar=""
-                                    title="Mike Andrew"
-                                    description="michael23"
+                                    title={props.profileData.firstName && props.profileData.lastName ? props.profileData.firstName + " " + props.profileData.lastName : "No info"}
+                                    description={props.profileData.login ? props.profileData.login : "No info"}
                                 />
-                                <p className="description text-center">
-                                    "Lamborghini Mercy <br/>
-                                    Your chick she so thirsty <br/>
-                                    I'm in that two seat Lambo"
+                                <p className="description text-left">
+                                    Email address: {props.profileData.email ? props.profileData.email : "No info"} <br/>
+                                    Phone: {props.profileData.phone ? props.profileData.phone : "No info"} <br/>
+                                    Address: {props.profileData.address ? props.profileData.address : "No info"}
                                 </p>
                             </CardBody>
-                            <Button
-                                // bsStyle="info"
-                                // pullRight
-                                fill
-                                type="button"
-                                onClick={ChangeProfFunc}
-                            >
-                                Change Profile
-                            </Button>
+                            {!props.upProf && <Button fill className="btn btn-primary" type="button" onClick={ChangeProfFunc}>Change Profile</Button> }
                         </Card>
                     </Col>
                 </div>
@@ -77,7 +69,8 @@ const User = (props) => {
 
 function mapStateToProps(state){
     return {
-        upProf: state.userProfile.changeProfile
+        upProf: state.userProfile.changeProfile,
+        profileData: state.userProfile.profileInformation
     }
 };
 

@@ -173,6 +173,7 @@ class Register extends Component {
                                                         placeholder="Username"
                                                         className="form-control"
                                                         onChange={(e) => this.registerUsername(e)}
+                                                        value="asdasd"
                                                     />
                                                 </div>
                                                 <div className={ "input-group " + this.state.State.emailState }>

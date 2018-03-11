@@ -1,7 +1,14 @@
 const initialState = {
     changeProfile: false,
     pageSubcategories: "ps1",
-    profileInformation: {}
+    profileInformation: {
+        login: "Muviez",
+        email: "goryushin.andrey@yandex.ru",
+        phone: "+79112792335",
+        firstName: "Andre",
+        lastName: "Gor",
+        address: "Mamka papka 229"
+    }
 }
 
 export default function userProfile(state = initialState, action) {
@@ -17,7 +24,7 @@ export default function userProfile(state = initialState, action) {
         case 'THIRD_TAB':
             return {...state, pageSubcategories: action.payload}
         case 'SAVE_PROFILE_INFO':
-            return {...state, profileInformation: action.date}
+            return {...state, profileInformation: action.data}
         default:
             return state
     }
